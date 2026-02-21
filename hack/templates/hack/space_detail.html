@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ space.name }} - Busy Hours</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>{{ space.name }}</h1>
+    <p>Opening hours: {{ space.opening_hours }}</p>
+    <p>Status: <span class="badge {% if space.occupied %}bg-danger{% else %}bg-success{% endif %}">
+        {% if space.occupied %}Occupied{% else %}Free{% endif %}
+    </span></p>
+
+    <h3 class="mt-4">Busy Hours</h3>
+    <canvas id="occupancyChart" width="400" height="150"></canvas>
+
+    <a href="{% url 'home' %}" class="btn btn-primary mt-4">Back to all spaces</a>
+</div>
+
+<script>
+    const ctx = document.getElementById('occupancyChart').getContext('2d');
+    const occupancyChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ labels|safe }},
+            datasets: [{
+                label: 'Occupancy',
+                data: {{ busy_hours|safe }},
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.3,
+                fill: true,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)'
+            }]
+        },
+        options: { responsive: true }
+    });
+</script>
+</body>
+</html>
