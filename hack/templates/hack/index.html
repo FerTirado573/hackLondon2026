@@ -86,8 +86,8 @@
 
                 <div class="text-end">
 
-                    <span class="badge status-badge {% if not space.is_available %}bg-danger{% else %}bg-success{% endif %}">
-                        {% if not space.is_available %}
+                    <span class="badge status-badge {% if space.occupied %}bg-danger{% else %}bg-success{% endif %}">
+                        {% if space.occupied %}
                             Occupied
                         {% else %}
                             Available
