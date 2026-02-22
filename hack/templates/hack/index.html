@@ -1,30 +1,110 @@
 <!-- spaces/templates/spaces/home.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Study Spaces</title>
-    <!-- Bootstrap CSS via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<div class="container mt-5">
-    <h1 class="mb-4">Study Spaces</h1>
 
-    <div class="list-group">
-        {% for space in spaces %}
-        <a href="{% url 'space_detail' space.id %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-            <div>
-                <h5 class="mb-1">{{ space.name }}</h5>
-                <small>Opening hours: {{ space.opening_hours }}</small>
-            </div>
-            <span class="badge {% if space.occupied %}bg-danger{% else %}bg-success{% endif %} rounded-pill">
-                {% if space.occupied %}Occupied{% else %}Free{% endif %}
-            </span>
-        </a>
-        {% empty %}
-        <p>No study spaces available.</p>
-        {% endfor %}
+    <!-- ✅ REQUIRED for mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f7fb;
+        }
+
+        .app-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .space-card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            transition: transform 0.08s ease, box-shadow 0.08s ease;
+        }
+
+        .space-card:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .status-free {
+            background-color: #28a745;
+        }
+
+        .status-occupied {
+            background-color: #dc3545;
+        }
+
+        .opening-hours {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 🔷 App-style header -->
+<div class="app-header py-3">
+    <div class="container">
+        <h4 class="mb-0 fw-semibold">📚 Study Spaces</h4>
     </div>
 </div>
+
+<div class="container py-3">
+
+    {% for space in spaces %}
+    <a href="{% url 'space_detail' space.id %}" class="text-decoration-none text-dark">
+        <div class="card space-card mb-3">
+            <div class="card-body d-flex justify-content-between align-items-center">
+
+                <div>
+                    <div class="fw-semibold fs-5">
+                        {{ space.name }}
+                    </div>
+                    <div class="opening-hours">
+                        Open: {{ space.opening_hours }}
+                    </div>
+                </div>
+
+                <div class="text-end">
+
+                    <span class="badge status-badge {% if not space.is_available %}bg-danger{% else %}bg-success{% endif %}">
+                        {% if not space.is_available %}
+                            Occupied
+                        {% else %}
+                            Available
+                        {% endif %}
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </a>
+    {% empty %}
+        <div class="text-center text-muted mt-5">
+            No study spaces available.
+        </div>
+    {% endfor %}
+
+</div>
+
 </body>
 </html>
