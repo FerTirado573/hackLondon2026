@@ -1,0 +1,45 @@
+{% extends "hack/base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <a href="{% url 'space_detail' space.id %}" class="btn btn-outline-secondary mb-3">
+        ← Back to {{ space.name }}
+    </a>
+
+    <div class="card p-4 shadow-sm">
+        <h2 class="mb-3">{{ space.name }}</h2>
+        <p class="text-muted mb-4">Opening hours: {{ space.opening_hours }}</p>
+
+        <h5>Confirm Your Booking</h5>
+
+        <form method="POST">
+    {% csrf_token %}
+    <!-- Hidden input passes the start hour to POST -->
+    <input type="hidden" name="start_time" value="{{ pref_start }}">
+    
+    <div class="mb-3">
+        <label class="form-label">Space:</label>
+        <input class="form-control" value="{{ space.name }}" disabled>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Booking time:</label>
+        <input type="datetime-local" class="form-control" value="{{ pref_start }}" disabled>
+    </div>
+
+    {% if error %}
+        <div class="alert alert-danger">
+            {% if error == "1" %}Invalid start time.
+            {% elif error == "2" %}Cannot book outside allowed range.
+            {% elif error == "3" %}Slot already booked or unavailable.
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <button class="btn btn-success w-100">Confirm Booking</button>
+</form>
+    </div>
+
+</div>
+{% endblock %}
