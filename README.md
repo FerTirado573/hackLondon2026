@@ -5,7 +5,7 @@
 ---
 
 ## 💡 The Problem
-Students often wander campus for 20+ minutes looking for a free desk, only to find "Ghost Bookings"—desks reserved online but physically empty. Existing systems rely on trust; **Smart Space** relies on data.
+Students often wander campus for 20+ minutes looking for a free desk, only to find "Ghost Bookings"—desks reserved online but physically empty. Existing systems rely on trust; **Smart Space** relies on real-time data.
 
 ## 🛠️ The Solution
 A full-stack ecosystem that bridges the gap between digital reservations and physical reality.
