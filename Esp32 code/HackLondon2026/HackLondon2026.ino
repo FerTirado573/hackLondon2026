@@ -6,8 +6,8 @@
 // 🔹 USER CONFIG
 // ==============================
 
-const char* ssid = "iPhone de Fer Tirado";
-const char* password = "popo0000";
+const char* ssid = "wifi_ssid";
+const char* password = "wifi_password";
 const char* serverUrl = "https://hacklondon2026.onrender.com/update_occupancy/1/";
 
 // ==============================
