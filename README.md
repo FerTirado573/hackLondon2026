@@ -50,6 +50,22 @@ The highlight of our system's efficiency.
 ## 📸 Project Gallery
 *Showcasing the intersection of hardware and software.*
 
+Hardware:
+
+![IMG_3776](https://github.com/user-attachments/assets/e8069926-d242-4f47-85c8-f2665baba7bf)
+
+
+Software:
+
+<img width="585" height="1266" alt="IMG_3799" src="https://github.com/user-attachments/assets/b0a8a554-21c2-4fc2-b047-b7c4ee19cd11" />
+
+
+<img width="585" height="1266" alt="IMG_3798" src="https://github.com/user-attachments/assets/0ed0b830-23b8-454a-ae77-acafe402d7e9" />
+
+<img width="585" height="1266" alt="IMG_3797" src="https://github.com/user-attachments/assets/d6e174c3-44cc-4a93-abaa-5a4a8d5d1cb6" />
+
+
+
 
 
 > **Wall-Mount Setup:** Our final product is designed to be hung at a 45-degree angle to provide a "conic" detection field over study desks.
