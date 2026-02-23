@@ -28,6 +28,8 @@ The highlight of our system's efficiency.
 2. **Monitoring:** The ESP32 tracks activity.
 3. **The 10-Min Rule:** If the hardware reports **0 motion** for a continuous 10-minute window during a reservation, the system intelligently cancels the booking and notifies the community that the desk is free.
 
+### ⏳ No annoying Check-in/check-out buttons, all automatic
+Whether that's for bookings or simple walk-ins, the system simply works without any expected input by the user
 
 
 ---
