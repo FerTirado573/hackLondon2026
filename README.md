@@ -67,11 +67,6 @@ Manage bookings and check real-time availability through our responsive dashboar
   <img src="https://github.com/user-attachments/assets/b0a8a554-21c2-4fc2-b047-b7c4ee19cd11" width="30%" />
 </p>
 
-
-
-
-> **Wall-Mount Setup:** Our final product is designed to be hung at a 45-degree angle to provide a "conic" detection field over study desks.
-
 ---
 
 ## 🏆 Hackathon Achievements
