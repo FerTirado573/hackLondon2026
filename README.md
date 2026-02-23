@@ -1,8 +1,4 @@
-# 🚀 Smart Space: Real-Time Study Analytics & Booking
-
-**HackLondon 2026 Submission** *Optimizing campus resources through IoT-driven presence detection.*
-
-
+#HackLondon 2026: 🚀 Smart Space: Real-Time Study Analytics & Booking
 
 ---
 
