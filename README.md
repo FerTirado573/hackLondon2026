@@ -70,9 +70,6 @@ Manage bookings and check real-time availability through our responsive dashboar
 ---
 
 ## 🏆 Hackathon Achievements
-* Successfully implemented **End-to-End Encryption** between IoT hardware and Cloud API.
+* Successfully implemented connection between IoT hardware and Custom Cloud API.
 * Reduced potential "dead space" time by implementing the **10-minute automated release cycle**.
 * Built and deployed a fully functional live product in under 24 hours.
-
----
-*Developed with ❤️ at HackLondon 2026*
