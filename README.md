@@ -28,9 +28,11 @@ The highlight of our system's efficiency.
 2. **Monitoring:** The ESP32 tracks activity.
 3. **The 10-Min Rule:** If the hardware reports **0 motion** for a continuous 10-minute window during a reservation, the system intelligently cancels the booking and notifies the community that the desk is free.
 
-### ⏳ No annoying Check-in/check-out buttons, all automatic
-Whether that's for bookings or simple walk-ins, the system simply works without any expected input by the user
-
+### ⚡ Zero-Friction Interaction
+We eliminated the need for manual check-in/check-out buttons. The system adapts to student behavior automatically:
+* **Passive Check-in:** Your booking is confirmed the moment the PIR sensor detects your arrival.
+* **Smart Walk-ins:** Unreserved spaces are marked "Occupied" in real-time as soon as you sit down, preventing double-bookings.
+* **Invisible UX:** The system works in the background, allowing students to focus on their studies rather than a web interface.
 
 ---
 
